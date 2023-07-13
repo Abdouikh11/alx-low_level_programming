@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Prompt for the file name
+read -p "Enter the file name: " filename
+
+# Open the file in vi for editing
+vi "$filename"
+
+# Make the file executable
+chmod u+x "$filename"
+
+# Add the file to the git repository
+git add "$filename"
+
+# Prompt for the commit message
+read -p "Enter the commit message: " commit_message
+
+# Commit the changes
+git commit -m "$commit_message"
+
+# Push the changes to the remote repository
+git push
+
