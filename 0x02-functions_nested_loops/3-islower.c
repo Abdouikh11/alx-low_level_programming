@@ -2,13 +2,11 @@
 
 /**
  * _islower - checkes if the char is in lowercase
- * @param c The character to check.
+ * param c The character to check.
  * Return: 1 if c is lowercase, 0 otherwise.
  */
-int _islower(void)
+int _islower(int c)
 {
-	int c;
-
 	if (c >= 'a' && c <= 'z')
 	{
 	return (1);
