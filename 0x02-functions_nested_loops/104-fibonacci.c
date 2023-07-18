@@ -3,8 +3,10 @@
 
 #define MAX_DIGITS 100
 
+/* Function prototypes */
 void print_string(char *str);
 void add_strings(char *a, char *b, char *c);
+
 /**
  * main - Entry point
  *
@@ -13,25 +15,23 @@ void add_strings(char *a, char *b, char *c);
 int main(void)
 {
 	int i;
-	char a[MAX_DIGITS] = "1";
-	char b[MAX_DIGITS] = "2";
-	char c[MAX_DIGITS];
+	char a[MAX_DIGITS] = "0";
+	char b[MAX_DIGITS] = "0";
+	char c[MAX_DIGITS] = "1";
 
-	print_string(a);
-	printf(", ");
-	print_string(b);
-
-	for (i = 2; i < 98; i++)
+	for (i = 0; i < 98; i++)
 	{
-		add_strings(a, b, c);
-		printf(", ");
 		print_string(c);
+		if (i < 97)
+			printf(", ");
+		add_strings(a, b, c);
 		strcpy(a, b);
 		strcpy(b, c);
 	}
 	printf("\n");
 	return (0);
 }
+
 /**
  * print_string - Prints a string without leading zeros
  * @str: The string to print
@@ -39,10 +39,12 @@ int main(void)
 void print_string(char *str)
 {
 	int i = 0;
+
 	while (str[i] == '0')
 		i++;
 	printf("%s", &str[i]);
 }
+
 /**
  * add_strings - Adds two strings of digits
  * @a: The first string of digits
@@ -70,4 +72,3 @@ void add_strings(char *a, char *b, char *c)
 		carry = sum / 10;
 	}
 }
-
