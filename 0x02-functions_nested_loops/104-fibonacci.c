@@ -1,74 +1,50 @@
 #include <stdio.h>
-#include <string.h>
-
-#define MAX_DIGITS 100
-
-/* Function prototypes */
-void print_string(char *str);
-void add_strings(char *a, char *b, char *c);
-
 /**
- * main - Entry point
+ *  main - Prints the first 98 Fibonacci numbers
  *
- * Return: Always 0 (Success)
+ *  Return: Always 0.
  */
+
 int main(void)
 {
-	int i;
-	char a[MAX_DIGITS] = "0";
-	char b[MAX_DIGITS] = "0";
-	char c[MAX_DIGITS] = "1";
+	int c, boolean, boolean2;
+	long int n1, n2, fn, fn2, n11, n22;
 
-	for (i = 0; i < 98; i++)
+	n1 = 1;
+	n2 = 2;
+	boolean =  boolean2 = 1;
+	printf("%ld, %ld", n1, n2);
+	for (c = 0; c < 96; c++)
 	{
-		print_string(c);
-		if (i < 97)
-			printf(", ");
-		add_strings(a, b, c);
-		strcpy(a, b);
-		strcpy(b, c);
+		if (boolean)
+		{
+			fn = n1 + n2;
+			printf(", %ld", fn);
+			n1 = n2;
+			n2 = fn;
+		}
+		else
+		{
+			if (boolean2)
+			{
+				n11 = n1 % 1000000000;
+				n22 = n2 % 1000000000;
+				n1 = n1 / 1000000000;
+				n2 = n2 / 1000000000;
+				boolean2 = 0;
+			}
+			fn2 = (n11 + n22);
+			fn = n1 + n2 + (fn2 / 1000000000);
+			printf(", %ld", fn);
+			printf("%ld", fn2 % 1000000000);
+			n1 = n2;
+			n11 = n22;
+			n2 = fn;
+			n22 = (fn2 % 1000000000);
+		}
+		if (((n1 + n2) < 0) && boolean == 1)
+			boolean = 0;
 	}
 	printf("\n");
 	return (0);
-}
-
-/**
- * print_string - Prints a string without leading zeros
- * @str: The string to print
- */
-void print_string(char *str)
-{
-	int i = 0;
-
-	while (str[i] == '0')
-		i++;
-	printf("%s", &str[i]);
-}
-
-/**
- * add_strings - Adds two strings of digits
- * @a: The first string of digits
- * @b: The second string of digits
- * @c: The resulting string of digits
- */
-void add_strings(char *a, char *b, char *c)
-{
-	int i = strlen(a) - 1;
-	int j = strlen(b) - 1;
-	int k = MAX_DIGITS - 1;
-	int carry = 0;
-	int sum;
-
-	memset(c, '0', MAX_DIGITS);
-
-	while (i >= 0 || j >= 0 || carry > 0)
-	{
-		sum = carry;
-		if (i >= 0)
-			sum += a[i--] - '0';
-		if (j >= 0)
-			sum += b[j--] - '0';
-		c[k--] = (sum % 10) + '0';
-		carry = sum / 10;
-	}
 }
