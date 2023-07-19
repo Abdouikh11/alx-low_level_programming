@@ -1,21 +1,23 @@
 #include <stdio.h>
+
 /**
- * main - Entry point
- * Return: alwyas 0
+ *main - Prints the add of the Fibonacci numbers
+ * Return: Always 0.
  */
+
 int main(void)
-{
-	int i;
-	long long int fib[50];
+{	int c;
+	long int n1, n2, fn;
 
-	fib[0] = 1;
-	fib[1] = 2;
-	printf("%lld, %lld", fib[0], fib[1]);
-
-	for (i = 2; i < 50; i++)
+	n1 = 1;
+	n2 = 2;
+	printf("%ld, %ld", n1, n2);
+	for (c = 0; c < 48; c++)
 	{
-		fib[i] = fib[i - 1] + fib[i - 2];
-		printf(", %lld", fib[i]);
+		fn = n1 + n2;
+		printf(", %ld", fn);
+		n1 = n2;
+		n2 = fn;
 	}
 	printf("\n");
 	return (0);
