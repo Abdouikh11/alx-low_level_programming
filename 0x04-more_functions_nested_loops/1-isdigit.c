@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * _isdigit - fonction that cheks for a digit
+ * _isdigit - Fonction that cheks for a digit
  * @c:the number
- * Returns: 1 if it's correct or 0 if not
+ * Return: Alwyas 1 if it's correct or 0 if not
  */
 
 int _isdigit(int c)
 {
-	if (c >= 65 && c <= 90)
+	if (c >= 48 && c <= 58)
 	{
 		return (1);
 	}
