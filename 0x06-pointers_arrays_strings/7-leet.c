@@ -9,22 +9,20 @@
 
 char *leet(char *a)
 {
-	char *ptr = a;
-	char leet_chars[] = "aAeEoOtTlL";
-	char leet_replacements[] = "4433007711";
-	int i;
+	int i, j;
+	char s1[] = "aAeEoOtTlL";
+	char s2[] = "4433007711";
 
-	while (*ptr != '\0')
+	for (i = 0; s1[i] != '\0'; i++)
 	{
-		for (i = 0; leet_chars[i] != '\0'; i++)
+		for (j = 0; j < 10; j++)
 		{
-			if (*ptr == leet_chars[i])
+			if (a[i] == s1[j])
 			{
-				*ptr = leet_replacements[i / 2];
-				break;
+				a[i] = s2[j];
 			}
 		}
-		ptr++;
 	}
 	return (a);
 }
+
