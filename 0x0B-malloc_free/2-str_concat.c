@@ -10,20 +10,20 @@
 char *str_concat(char *s1, char *s2)
 {
 	char *T;
-	unsigned int i, j, len1, len2;
+	unsigned int i, j, l1 = 0, l2 = 0;
 
 	if (s1 != NULL)
-		for (len1 = 0; s1[len1]; len1++)
+		for (l1 = 0; s1[l1]; l1++)
 			;
 	if (s2 != NULL)
-		for (len2 = 0; s2[len2]; len2++)
+		for (l2 = 0; s2[l2]; l2++)
 			;
-	T = malloc((len1 + len2 + 1) * sizeof(char));
+	T = malloc((l1 + l2 + 1) * sizeof(char));
 	if (T == NULL)
 		return (NULL);
-	for (i = 0; i < len1; i++)
+	for (i = 0; i < l1; i++)
 		T[i] = s1[i];
-	for (j = 0; j < len2; j++, i++)
+	for (j = 0; j < l2; j++, i++)
 		T[i] = s2[j];
 	T[i] = '\0';
 	return (T);
