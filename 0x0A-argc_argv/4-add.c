@@ -9,17 +9,19 @@
 
 int main(int argc, char *argv[])
 {
-	int i, n, sum = 0;
-
-	for (i = 0; i < argc; i++)
+	int sum = 0;
+	char *c;
+	while (--argc)
 	{
-		n = atoi(argv[i]);
-		if (n == 0 && argv[i][0] != '0')
+		for (c = argv[argc]; *c; c++)
 		{
-			printf("Error\n");
-			return (1);
+			if (*c < '0' || *c > '9')
+			{
+				printf("Error\n");
+				return (1);
+			}
+			sum += atoi(argv[argc]);
 		}
-		sum += n;
 	}
 	printf("%d\n", sum);
 	return (0);
