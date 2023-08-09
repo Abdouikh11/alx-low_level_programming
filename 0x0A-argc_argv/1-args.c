@@ -3,13 +3,13 @@
 /**
  * main - Entry point
  * @argc: the number of arguments
- * @argv: the array of strings as pointer
- * Return: return 0 alwyas success
- ***/
+ * @argv: the array of charachter as a pointer
+ * Return: return always 0 Success()
+ */
 
 int main(int argc, char *argv[])
 {
-	(void)argc;
-	printf("%s\n",argv[0]);
+	(void)argv;
+	printf("%d\n", argc - 1);
 	return (0);
 }
