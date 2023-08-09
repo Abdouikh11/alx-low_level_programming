@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 	if (argc != 2)
 	{
 		printf("Error\n");
-		return 1;
+		return (1);
 	}
 
 	cents = atoi(argv[1]);
@@ -42,5 +42,5 @@ int main(int argc, char *argv[])
 		printf("%d\n", min_coins);
 	}
 
-	return 0;
+	return (0);
 }
