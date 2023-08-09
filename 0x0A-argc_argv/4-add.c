@@ -2,28 +2,25 @@
 
 /**
  * main - Entry point
- * @argc: the number of arguments
- * @argv: the array of string
- * Return: return a 0 if successed
+ * @argc: The number  command line arguments
+ * @argv: An array of strings
+ * Return: 0 on success, 1 if fails
  */
-
 int main(int argc, char *argv[])
 {
-	int sum = 0;
-	char *c;
+	int i, num, sum = 0;
 
-	while (--argc)
+	for (i = 1; i < argc; i++)
 	{
-		for (c = argv[argc]; *c; c++)
+		num = atoi(argv[i]);
+		if (num == 0 && argv[i][0] != '0')
 		{
-			if (*c < '0' || *c > '9')
-			{
-				printf("Error\n");
-				return (1);
-			}
-			sum += atoi(argv[argc]);
+			printf("Error\n");
+			return (1);
 		}
+		sum += num;
 	}
+
 	printf("%d\n", sum);
 	return (0);
 }
