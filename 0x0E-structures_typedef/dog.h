@@ -20,7 +20,6 @@ struct dog
 };
 
 /**
- *
  * struct dog_t: typedef for struct dog we had before
  */
 
