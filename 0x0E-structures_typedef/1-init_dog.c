@@ -1,5 +1,6 @@
 #include "dog.h"
-
+#include <stdlib.h>
+#include <stdio.h>
 /**
  * init_dog - function that initialize variables of type
  * @d:The  pointer to use malloc
