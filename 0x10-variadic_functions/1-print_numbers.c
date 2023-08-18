@@ -3,7 +3,7 @@
 /**
  * print_numbers - function that prints numbers
  * @separator: the sperator tha separates two numbers
- * @n: numbers of paramters 
+ * @n: numbers of paramters
  *
  *
  *
