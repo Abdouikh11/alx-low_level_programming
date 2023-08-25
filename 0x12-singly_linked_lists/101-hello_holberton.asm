@@ -1,21 +1,22 @@
 section .data
-    hello db 'Hello, Holberton',0xA,0
+hello db "Hello, Holberton",0
+format db "%s",10,0
 
 section .text
-    global _start
+global main
+extern printf
 
-    extern printf
+main:
+; Push format string onto the stack
+push format
+; Push hello string onto the stack
+push hello
+; Call printf
+call printf
+; Clean up the stack
+add rsp, 16
 
-_start:
-    ; print the string using printf
-    push rbp
-    mov rdi, hello
-    xor eax, eax
-    call printf
-    pop rbp
-
-    ; exit the program
-    xor rax, rax
-    mov rax, 60
-    xor rdi, rdi
-    syscall
+; Exit the program
+mov rax, 60         ; syscall: exit
+xor rdi, rdi        ; status: 0
+syscall
