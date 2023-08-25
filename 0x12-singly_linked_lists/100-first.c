@@ -1,5 +1,7 @@
 #include "lists.h"
 
+void __attribute__ ((constructor)) premain();
+
 /**
  * premain - functio that gives and prints
  *
