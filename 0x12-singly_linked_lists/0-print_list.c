@@ -3,14 +3,12 @@
 /**
  * print_list - function prints all element of list_t
  * @h: pointer to head of list
- *
  * Return:the number of nodes
  */
 
 size_t print_list(const list_t *h)
 {
 	size_t cnt;
-
 	cnt = 0;
 
 	while (h != NULL)
