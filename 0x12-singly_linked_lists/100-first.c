@@ -1,8 +1,7 @@
 #include "lists.h"
 
 /**
- * __attribute__ - prints s sentence
- * premain - function that persms
+ * premain - functio that gives
  *
  */
 
