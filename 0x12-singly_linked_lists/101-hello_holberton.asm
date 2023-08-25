@@ -1,6 +1,5 @@
 section .data
-	hello_msgs db "Hello, Holberton",0
-	format db "%s",10,0
+	hello_msgs db "Hello, Holberton", 10, 0
 
 section .text
 	global main
