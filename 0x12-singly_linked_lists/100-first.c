@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * premain - functio that gives
+ * premain - functio that gives and prints
  *
  */
 
