@@ -11,7 +11,8 @@
  * @owner: the owner of the dog
  * Description: Longer
  */
-struct dog {
+struct dog
+{
 	char *name;
 	float age;
 	char *owner;
