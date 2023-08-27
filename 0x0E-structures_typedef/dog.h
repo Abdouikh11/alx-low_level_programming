@@ -11,12 +11,13 @@
  * @owner: the owner of the dog
  * Description: Longer
  */
-typedef struct dog
+
+struct dog
 {
 	char *name;
 	float age;
 	char *owner;
-}dog_t;
+};
 
 /**
  * dog_t - typedef for struct dog we had before
