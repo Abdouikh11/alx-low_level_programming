@@ -1,4 +1,4 @@
-#include "mai.h"
+#include "main.h"
 
 /**
  * get_endianness - function that checks the endianness of the system
